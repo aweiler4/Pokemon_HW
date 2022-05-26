@@ -1,8 +1,21 @@
-const React = require('react')
+const React = require('react');
+const pokemon = require('../models/pokemon');
 class Index extends React.Component {
    render () {
     return (
-      <h1> See all the Pokemon! </h1>
+       
+      <div>
+          <h1>See all the Pokemon!</h1>
+          <ul>
+              {pokemon.map((pokemon, i) => {
+                  return (
+                      <li>
+                          {pokemon.name}
+                      </li>
+                  )
+              })}
+          </ul>
+      </div>
      );
     }
  }
